@@ -15,6 +15,13 @@
  */
 function logNames(items) {
   // TODO: use `forEach`
+
+  let idx = 0;
+  while (idx < items.length) {
+    const item = items[idx];
+    console.log(item.name);
+    idx += 1;
+  }
 }
 
 /**
@@ -22,7 +29,12 @@ function logNames(items) {
  * @returns {string[]} an array of item names in all uppercase
  */
 function getUppercaseNames(items) {
-  // TODO: use `map`
+  const uppercaseNames = [];
+  for (const item of items) {
+    const uppercaseName = item.name.toUpperCase();
+    uppercaseNames.push(uppercaseName);
+  }
+  return uppercaseNames;
 }
 
 /**
@@ -31,6 +43,13 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
+  for (const item of items) {
+    if (item.id === id) {
+      return item;
+    }
+  }
+  return undefined;
+
   // TODO: use `find`
 }
 
@@ -40,7 +59,12 @@ function getItemById(items, id) {
  * @returns {number} the price of the item named `name`
  */
 function getItemPriceByName(items, name) {
-  // TODO: use a loop!
+  for (const item of items) {
+    if (item.name === name) {
+      return item.price;
+    }
+  }
+  return undefined;
 }
 
 /**
@@ -50,6 +74,15 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+
+  const itemCategory = [];
+  for (const item of items) {
+    if (item.category === item) {
+      itemCategory.push(item);
+      return itemCategory;
+    }
+  }
+  return undefined;
 }
 
 /**
